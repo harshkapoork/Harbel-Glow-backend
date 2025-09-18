@@ -13,7 +13,9 @@ app.use(express.json())
 app.get("/",(req,res)=>{
     res.json("home")
 })
-
+app.use("*",(req,res)=>{
+res.json("page not found")
+})
 // Routes
 app.use('/api/products', require('./routes/products'))
 app.use('/api/categories', require('./routes/categories'))
